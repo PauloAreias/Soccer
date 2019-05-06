@@ -7,11 +7,14 @@ import { AppComponent } from './app.component';
 import { LigasComponent } from './ligas/ligas.component';
 import { LigasService } from "./ligas/ligas.service";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { EquipasComponent } from './equipas/equipas.component';
+import { EquipasService } from "./equipas/equipas.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LigasComponent
+    LigasComponent,
+    EquipasComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     AppRoutingModule,
     NgbModule.forRoot()
   ],
-  providers: [LigasService],
+  providers: [LigasService, EquipasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

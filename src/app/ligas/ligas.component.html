@@ -31,13 +31,30 @@
                 <div class="alert alert-light" role="alert">
                   {{ligas.name}}  
                 </div>
+
+                <h1>Location:</h1>
+                <div class="alert alert-light" role="alert">
+                    {{equipas.competition.area.name}}
+                  </div>
+
+                <h1>Equipas:</h1>
+                <div class="alert alert-light" role="alert">
+                    <div class= "text-center">
+                        <p><img [src]="equipas.teams[4].crestUrl" width="15%">  {{equipas.teams[4].name}}</p>
+                    </div>
+                  </div>
+                
                
           <!-- </sectiom> -->
         </div>
         <div class="col-md-6">
-          <h1>Last Season {{ligas.seasons[1].startDate}} / {{ligas.seasons[1].endDate}} </h1>
-            <div class="alert alert-primary" role="alert">
-             {{ligas.seasons[1].winner.name}}
+          <h1>Season {{ligas.seasons[1].startDate}} / {{ligas.seasons[1].endDate}}  Winner:</h1>
+            <div class="alert alert-success" role="alert">
+              <div class= "text-center">
+                  <p><img [src]="ligas.seasons[1].winner.crestUrl" width="50%"></p>
+                  <p >{{ligas.seasons[1].winner.name}}</p>
+              </div>
+                
             </div>
       </div>
     </div>
