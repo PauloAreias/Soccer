@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { LigasComponent } from './ligas/ligas.component';
 import { LigasService } from "./ligas/ligas.service";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { EquipasComponent } from './equipas/equipas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LigasComponent
+    LigasComponent,
+    EquipasComponent
   ],
   imports: [
     BrowserModule,
