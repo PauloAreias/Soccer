@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { settings } from 'cluster';
+
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +31,16 @@ settings ={
 
 
 
-    return this.http.get(this.settings.url + liga + "/teams" , {headers: headers});
+    return this.http.get(this.settings.url + liga , {headers: headers});
 
   }
+
+  // getCurrentTeams(liga){
+
+  //   let headers: HttpHeaders = new HttpHeaders;
+
+  //   headers = headers.append("X-Auth-Token",this.settings.headers["X-Auth-Token"]);
+
+  //   return this.http.get(this.settings.url + liga + "/teams" , {headers: headers});
+  // }
 }

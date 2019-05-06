@@ -9,7 +9,7 @@
       <div class="col-md-12">
 
           <div ngbDropdown class="d-inline block">
-              <button class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>Select League: {{name}} </button>
+              <button class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>League</button>
 
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                   <button class="dropdown-item" (click)="SelectLiga('PPL','1ª liga')" >1ª Liga</button>
@@ -19,29 +19,30 @@
               </div>
             </div>
 
+        </div>
       </div>
 
       <hr>
 
       <div class="row">
-        <div class="col-md-12">
-           Equipas:
-          <div class="alert alert-danger" role="alert">
-          
-                <p *ngIf = "ligas.teams.length <= 18 ">
-                  <!-- <section *ngFor = "let i=0 i<=18"></section> -->
-                  {{ligas.teams[0].name}}
-                </p>
-            
-                
-            
-          </div>
+        <div class="col-md-6">
+          <h1>League Name:</h1>
+          <!-- <sectiom class="alert alert-danger" role="alert" *ngFor= "let team of ligas" [class.featured]="team.featured" > -->
+                <div class="alert alert-light" role="alert">
+                  {{ligas.name}}  
+                </div>
+               
+          <!-- </sectiom> -->
         </div>
+        <div class="col-md-6">
+          <h1>Last Season {{ligas.seasons[1].startDate}} / {{ligas.seasons[1].endDate}} </h1>
+            <div class="alert alert-primary" role="alert">
+             {{ligas.seasons[1].winner.name}}
+            </div>
       </div>
     </div>
-    
-
   </div>
+
   <div class="col-md-1"></div>
 </div>
 </body>

@@ -5,3 +5,14 @@
 html{
     height: 100%;
 }
+
+
+body{
+    /* background: -webkit-linear-gradient(rgb(161, 9, 221),rgb(0, 60, 255)); */
+    background: linear-gradient(rgb(20, 40, 95),rgb(0, 2, 5)) no-repeat fixed;;
+
+}
+h1{
+    color: #eef5f7;
+    font-size: 15px;
+}
