@@ -8,6 +8,7 @@ import { LigasComponent } from './ligas/ligas.component';
 import { LigasService } from "./ligas/ligas.service";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { EquipasComponent } from './equipas/equipas.component';
+import { EquipasService } from "./equipas/equipas.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { EquipasComponent } from './equipas/equipas.component';
     AppRoutingModule,
     NgbModule.forRoot()
   ],
-  providers: [LigasService],
+  providers: [LigasService, EquipasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
