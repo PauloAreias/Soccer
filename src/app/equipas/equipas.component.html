@@ -9,12 +9,12 @@
       <div class="col-md-12">
 
           <div ngbDropdown class="d-inline block">
-              <button class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>League {{name}}</button>
+              <button class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle> {{equipas.competition.name}} </button>
 
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button class="dropdown-item" (click)="SelectEquipas('PPL','1ª liga')" >1ª Liga</button>
+                  <button class="dropdown-item" (click)="SelectEquipas('PPL')" >1ª Liga</button>
             
-                  <button class="dropdown-item" (click)="SelectEquipas('CL', 'UEFA Champions League')" >UEFA</button>
+                  <button class="dropdown-item" (click)="SelectEquipas('CL')" >UEFA</button>
           
               </div>
             </div>
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <hr>
+      <br>
 
       <div class="row">
         <div class="col-md-6">
@@ -30,18 +30,27 @@
           <h1>Location:</h1>
           <!-- <sectiom class="alert alert-danger" role="alert" *ngFor= "let team of ligas" [class.featured]="team.featured" > -->
                 <div class="alert alert-light" role="alert">
-                  {{ligas.competition.area.name}}
+                  {{equipas.competition.area.name}}
                 </div>
                
           <!-- </sectiom> -->
         </div>
         <div class="col-md-6">
-          <h1>Equipas </h1>
-            <div class="alert alert-primary" role="alert">
+            <h1>Teams:</h1>
+            <div class="alert alert-light" role="alert" *ngFor="let teams of equipas.teams" >
+              <div class="row">
+                <div class="col-md-5">
+                  <div class= "text-center">
+                    <img [src]="teams.crestUrl" width="15%" style="margin-right: 2%">
+                 </div>
+                </div>
               
-             <p style="margin-left: 27%"><img [src]="ligas.teams[4].crestUrl" width="50%"></p>
-                <p style="margin-left: 30%">{{ligas.teams[4].name}}</p>
-            </div>
+                <div class="col-md-7">
+                    {{teams.name}}
+                </div>
+              </div>
+              </div>
+              
       </div>
     </div>
   </div>

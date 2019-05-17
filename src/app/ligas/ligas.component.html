@@ -8,16 +8,22 @@
     <div class="row">
       <div class="col-md-12">
 
-          <div ngbDropdown class="d-inline block">
-              <button class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>League</button>
+          <!-- <div ngbDropdown class="d-inline block">
+              <button class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>League</button> -->
 
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button class="dropdown-item" (click)="SelectLiga('PPL','1ª liga')" >1ª Liga</button>
+              <!-- <div ngbDropdownMenu aria-labelledby="dropdownBasic1"> -->
+                            <button type="button" class="btn btn-primary" (click)="SelectLiga('PPL')" >1ª Liga</button>
+                  
+                            <button type="button" class="btn btn-primary" style="margin-left: 1%" (click)="SelectLiga('CL')" >UEFA</button>
+                      
+                            
+
+                  
             
-                  <button class="dropdown-item" (click)="SelectLiga('CL', 'UEFA Champions League')" >UEFA</button>
+                  
           
-              </div>
-            </div>
+              <!-- </div> -->
+            <!-- </div> -->
 
         </div>
       </div>
@@ -27,7 +33,7 @@
       <div class="row">
         <div class="col-md-6">
           <h1>League Name:</h1>
-          <!-- <sectiom class="alert alert-danger" role="alert" *ngFor= "let team of ligas" [class.featured]="team.featured" > -->
+          
                 <div class="alert alert-light" role="alert">
                   {{ligas.name}}  
                 </div>
@@ -37,21 +43,29 @@
                     {{equipas.competition.area.name}}
                   </div>
 
-                <h1>Equipas:</h1>
-                <div class="alert alert-light" role="alert">
-                    <div class= "text-center">
-                        <p ><img [src]="equipas.teams[4].crestUrl" width="15%">  {{equipas.teams[4].name}}</p>
+                <h1>Teams:</h1>
+                <div class="alert alert-light" role="alert" *ngFor="let teams of equipas.teams" >
+                    <div class="thumbnail card">
+                        <div class="row">
+                          <div class="col-md-5">
+                            <div class="text-center">
+                                <img [src]="teams.crestUrl" width="15%" style="margin-right: 2%">
+                            </div>
+                          </div>
+                          <div class="col-md-7">
+                          {{teams.name}}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                
-               
-          <!-- </sectiom> -->
-        </div>
-        <div class="col-md-6">
+       
+        <div class="col-md-6" >
           <h1>Season {{ligas.seasons[1].startDate}} / {{ligas.seasons[1].endDate}}  Winner:</h1>
             <div class="alert alert-success" role="alert">
               <div class= "text-center">
                   <p><img [src]="ligas.seasons[1].winner.crestUrl" width="50%"></p>
+                  <br>
                   <p >{{ligas.seasons[1].winner.name}}</p>
               </div>
                 

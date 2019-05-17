@@ -9,9 +9,8 @@ import { EquipasService } from "./equipas.service";
 })
 export class EquipasComponent implements OnInit {
 
-  ligas: {}
+  equipas: {}
   liga:String;
-  name:String;
 
   
 
@@ -21,7 +20,7 @@ export class EquipasComponent implements OnInit {
 
   ngOnInit() {
 
-    this.name= "1ª Liga"
+  
 
     this.liga= "PPL";
 
@@ -29,15 +28,14 @@ export class EquipasComponent implements OnInit {
  
   }
 
-  SelectEquipas(liga, name){
-      this.name= name;
+  SelectEquipas(liga){
       this.liga=liga;
       this.getCurrentTeams(liga);
   }
 
   getCurrentTeams(Liga){
 
-      this.equipaService.getCurrentTeams(Liga).subscribe(teams => this.ligas = teams);
+      this.equipaService.getCurrentTeams(Liga).subscribe(teams => this.equipas = teams);
     }
 
 }

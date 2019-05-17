@@ -21,7 +21,7 @@ export class LigasComponent implements OnInit {
 
     this.liga= "PPL";
 
-    this.name ="1ª Liga"
+    // this.name ="1ª Liga"
 
     this.getCurrentLiga(this.liga)
 
@@ -31,8 +31,8 @@ export class LigasComponent implements OnInit {
 
   }
 
-  SelectLiga(liga, name){
-    this.name= name;
+  SelectLiga(liga){
+    // this.name= name;
     this.liga=liga;
     this.getCurrentLiga(liga);
     this.getCurrentTeams(liga);
