@@ -32,41 +32,42 @@
 
       <div class="row">
         <div class="col-md-6">
-          <h1>League Name:</h1>
+          <h2 >League Name:</h2>
           
-                <div class="alert alert-light" role="alert">
+                <div class="alert alert-dark" role="alert">
                   {{ligas.name}}  
                 </div>
 
-                <h1>Location:</h1>
-                <div class="alert alert-light" role="alert">
+                <h2 >Location:</h2>
+                <div class="alert alert-dark" role="alert">
                     {{equipas.competition.area.name}}
                   </div>
 
-                <h1>Teams:</h1>
-                <div class="alert alert-light" role="alert" *ngFor="let teams of equipas.teams" >
-                    <div class="thumbnail card">
-                        <div class="row">
-                          <div class="col-md-5">
-                            <div class="text-center">
-                                <img [src]="teams.crestUrl" width="15%" style="margin-right: 2%">
-                            </div>
-                          </div>
-                          <div class="col-md-7">
-                          {{teams.name}}
-                          </div>
-                        </div>
+                <h2>Teams:</h2>
+                <div style="overflow-y:scroll; height:400px"> 
+                    <table id="myTable" class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th >Logo</th>
+                        <th onclick="sortTable(1)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Equipa</th>
+                        <!-- <th onclick="sortTable(2)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Competições</th>
+                        <th onclick="sortTable(3)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Pais</th> -->
+                      </tr>
+                      </thead>
+                      <tbody *ngFor="let teams of equipas.teams">
+                        <td ><a><img [src]="teams.crestUrl" width="15%" style="margin-right: 2%"></a></td>
+                        <td><a href="#">{{teams.name}}</a></td>
+                      </tbody>
+                      </table>
                       </div>
-                    </div>
-                  </div>
+            </div>
        
         <div class="col-md-6" >
-          <h1>Season {{ligas.seasons[1].startDate}} / {{ligas.seasons[1].endDate}}  Winner:</h1>
+          <h2 >Season {{ligas.seasons[1].startDate}} / {{ligas.seasons[1].endDate}}  Winner:</h2>
             <div class="alert alert-success" role="alert">
               <div class= "text-center">
-                  <p><img [src]="ligas.seasons[1].winner.crestUrl" width="50%"></p>
-                  <br>
-                  <p >{{ligas.seasons[1].winner.name}}</p>
+                  <p><img [src]="ligas.seasons[1].winner.crestUrl" height="558px" width="400px"></p>
+                  <p ><a href="#">{{ligas.seasons[1].winner.name}}</a></p>
               </div>
                 
             </div>
