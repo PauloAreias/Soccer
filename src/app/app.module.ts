@@ -11,12 +11,15 @@ import { EquipasComponent } from './equipas/equipas.component';
 import { EquipasService } from "./equipas/equipas.service";
 
 import { MatTableModule, MatSortModule} from '@angular/material';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { EquipasInfoComponent } from './equipas-info/equipas-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LigasComponent,
-    EquipasComponent
+    EquipasComponent,
+    EquipasInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { MatTableModule, MatSortModule} from '@angular/material';
     AppRoutingModule,
     NgbModule.forRoot(),
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    BrowserAnimationsModule
   ],
   providers: [LigasService, EquipasService],
   bootstrap: [AppComponent]
