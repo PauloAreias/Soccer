@@ -35,12 +35,13 @@ settings ={
 
   }
 
-  getCurrentTeams(liga){
+  getCurrentStandings(liga){
 
     let headers: HttpHeaders = new HttpHeaders;
 
    headers = headers.append("X-Auth-Token",this.settings.headers["X-Auth-Token"]);
 
-   return this.http.get(this.settings.url + liga + "/teams" , {headers: headers});
+   return this.http.get(this.settings.url + liga + "/standings" , {headers: headers});
   }
+
 }
