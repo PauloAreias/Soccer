@@ -9,7 +9,7 @@ import { LigasService } from './ligas.service';
 export class LigasComponent implements OnInit {
 
   ligas: {};
-  equipas:{};
+  standings:{};
   liga : String;
   name: String;
 
@@ -25,7 +25,7 @@ export class LigasComponent implements OnInit {
 
     this.getCurrentLiga(this.liga)
 
-    this.getCurrentTeams(this.liga);
+    this.getCurrentStandings(this.liga);
 
     
 
@@ -35,7 +35,7 @@ export class LigasComponent implements OnInit {
     // this.name= name;
     this.liga=liga;
     this.getCurrentLiga(liga);
-    this.getCurrentTeams(liga);
+    this.getCurrentStandings(liga);
   }
 
   
@@ -47,9 +47,9 @@ export class LigasComponent implements OnInit {
 
 
 
-getCurrentTeams(Liga){
+getCurrentStandings(Liga){
 
-    this.ligaService.getCurrentTeams(Liga).subscribe(teams => this.equipas = teams);
+    this.ligaService.getCurrentStandings(Liga).subscribe(teams => this.standings = teams);
   }
 
 
