@@ -10,6 +10,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { EquipasComponent } from './equipas/equipas.component';
 import { EquipasService } from "./equipas/equipas.service";
 
+import { MatTableModule, MatSortModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { EquipasService } from "./equipas/equipas.service";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    MatSortModule,
+    MatTableModule
   ],
   providers: [LigasService, EquipasService],
   bootstrap: [AppComponent]

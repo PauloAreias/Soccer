@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { LigasService } from './ligas.service';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-ligas',
@@ -8,10 +9,13 @@ import { LigasService } from './ligas.service';
 })
 export class LigasComponent implements OnInit {
 
+  @ViewChild(MatSort)sort: MatSort; 
+  dataSource; 
   ligas: {};
   standings:{};
   liga : String;
   name: String;
+  pos: Number;
 
   constructor(private ligaService: LigasService) { }
 
@@ -26,6 +30,9 @@ export class LigasComponent implements OnInit {
     this.getCurrentLiga(this.liga)
 
     this.getCurrentStandings(this.liga);
+
+    this.dataSource = new MatTableDataSource;
+    this.dataSource.sort= this.sort;
 
     
 

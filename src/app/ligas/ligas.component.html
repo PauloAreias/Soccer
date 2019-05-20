@@ -38,59 +38,65 @@
                   {{ligas.name}}  
                 </div>
 
-                <h2 >Location:</h2>
+                <h2 >Schedule:</h2>
                 <div class="alert alert-dark" role="alert">
                     {{standings.competition.area.name}}
                   </div>
 
-                <h2>Standings:</h2>
+                <h2>Standings {{standings.season.startDate}} / {{standings.season.endDate}} : </h2>
                 <div style="overflow-y: scroll; height:400px;"  >
                   <div *ngFor="let teams of standings.standings">
-                    <div *ngIf="liga==='CL'">
+                    <!-- <div *ngIf="liga==='CL'">
                       <div class="row" *ngIf= "teams.type=== 'TOTAL'">
 
-                              <!-- <div class="col-md-6" >
+                               <div class="col-md-6" >
                                   <h2 >{{teams.group}} </h2>
                                 </div>
                                 <div class="col-md-6" >
                                     <h2>{{teams.group}}x </h2>
-                                </div> -->
+                                </div> 
                           
-                        </div>
-                      </div> 
-                   <div *ngIf="liga!='CL'"> 
-                      <!-- <h2 *ngIf="teams.type=== 'TOTAL'">{{teams.group}} </h2>     -->
-                        <table id="myTable" class="table table-hover " *ngIf="teams.type=== 'TOTAL'">
+                        </div> 
+                      </div>  -->
+                      
+                   <!-- <div *ngIf="liga!='CL'">  -->
+                     <h2 style="color:#005391" *ngIf="teams.type=== 'TOTAL'">{{teams.group}} </h2> 
+                        <table id="myTable" class="table table-hover "  *ngIf="teams.type=== 'TOTAL'">
                           
                         <thead>
                   
                           <tr>
-                              <th onclick="sortTable(1)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Position</th>
-                              <th >Logo</th>
-                              <th onclick="sortTable(2)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Equipa</th>
-                              <th onclick="sortTable(3)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">J</th>
-                              <th onclick="sortTable(4)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">V</th>
-                              <th onclick="sortTable(5)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">E</th>
-                              <th onclick="sortTable(6)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">D</th>
-                              <th onclick="sortTable(7)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">GM</th>
-                              <th onclick="sortTable(8)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">GS</th>
-                              <th onclick="sortTable(9)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">P</th>
+                              <th matSort >Position</th>
+                              <th >Crest</th>
+                              <th mat-sorter-header><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Team</th>
+                              <th mat-sorter-header><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Points</th>
+                              <th mat-sorter-header><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Games</th>
+                              <th mat-sorter-header><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Wins</th>
+                              <th mat-sorter-header><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Draws</th>
+                              <th mat-sorter-header><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Losts</th>
+                              <th mat-sorter-header><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Goals Scored</th>
+                              <th mat-sorter-header><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Goals Against</th>
+                              <th mat-sorter-header><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Goals Difference</th>
+                              
                             </tr>
                           </thead>
                           <tbody *ngFor="let teams2 of teams.table">
-                            <td></td>
-                            <td ><a><img [src]="teams2.team.crestUrl" width="70%" style="margin-right: 2%"></a></td>
+                            <td>{{teams2.position}}</td>
+                            <td ><a><img [src]="teams2.team.crestUrl" width="100%" style="margin-right: 2%"></a></td>
                             <td><a href="#">{{teams2.team.name}}</a></td>
+                            <td>{{teams2.points}}</td>
                             <td>{{teams2.playedGames}}</td>
-                            <td>{{teams2.playedGames}}</td>
-                            <td>{{teams2.playedGames}}</td>
-                            <td>{{teams2.playedGames}}</td>
-                            <td>{{teams2.playedGames}}</td>
-                            <td>{{teams2.playedGames}}</td>
-                            <td>{{teams2.playedGames}}</td>
+                            <td>{{teams2.won}}</td>
+                            <td>{{teams2.draw}}</td>
+                            <td>{{teams2.lost}}</td>
+                            <td>{{teams2.goalsFor}}</td>
+                            <td>{{teams2.goalsAgainst}}</td>
+                            <td>{{teams2.goalDifference}}</td>
                           </tbody>
                           </table>
-                        </div>
+                        <!-- </div> -->
+
+                        <br>
                       </div>
                 </div>
             </div>
