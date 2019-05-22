@@ -10,6 +10,7 @@ import { EquipasService } from "./equipas.service";
 export class EquipasComponent implements OnInit {
 
   equipas: {}
+  matches: {}
   liga:String;
 
   
@@ -25,17 +26,26 @@ export class EquipasComponent implements OnInit {
     this.liga= "PPL";
 
     this.getCurrentTeams(this.liga);
+
+    this.getCurrentMatches(this.liga);
  
   }
 
   SelectEquipas(liga){
       this.liga=liga;
       this.getCurrentTeams(liga);
+      this.getCurrentMatches(this.liga);
   }
 
   getCurrentTeams(Liga){
 
       this.equipaService.getCurrentTeams(Liga).subscribe(teams => this.equipas = teams);
+    }
+
+    getCurrentMatches(Liga){
+
+      this.equipaService.getCurrentMatches(Liga).subscribe(matches => this.matches = matches);
+
     }
 
 }

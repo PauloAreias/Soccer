@@ -30,4 +30,13 @@ export class EquipasService {
      return this.http.get(this.settings.url + liga + "/teams" , {headers: headers});
     }
 
+    getCurrentMatches(liga){
+
+      let headers: HttpHeaders = new HttpHeaders;
+  
+     headers = headers.append("X-Auth-Token",this.settings.headers["X-Auth-Token"]);
+  
+     return this.http.get(this.settings.url + liga + "/matches" , {headers: headers});
+    }
+
 }
