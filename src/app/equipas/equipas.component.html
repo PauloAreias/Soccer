@@ -59,7 +59,7 @@
                   </thead>
                   <tbody *ngFor="let teams of equipas.teams">
                     <td ><a><img [src]="teams.crestUrl" width="15%" style="margin-right: 2%"></a></td>
-                    <td><a href="#">{{teams.name}}</a></td>
+                    <td><a routerLink="/equipas-info/{{teams.id}}">{{teams.name}}</a></td>
                   </tbody>
                   </table>
                   </div>
