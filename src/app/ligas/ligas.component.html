@@ -44,7 +44,7 @@
                   </div>
 
                 <h2>Standings {{standings.season.startDate}} / {{standings.season.endDate}} : </h2>
-                <div style="overflow-y: scroll; height:400px;"  >
+                <div class="tableFixHead" style="overflow-y: scroll; height:400px;"  >
                   <div *ngFor="let teams of standings.standings">
                     <!-- <div *ngIf="liga==='CL'">
                       <div class="row" *ngIf= "teams.type=== 'TOTAL'">
@@ -83,7 +83,7 @@
                           <tbody *ngFor="let teams2 of teams.table">
                             <td>{{teams2.position}}</td>
                             <td ><a><img [src]="teams2.team.crestUrl" width="100%" style="margin-right: 2%"></a></td>
-                            <td><a href="#">{{teams2.team.name}}</a></td>
+                            <td><a routerLink="/equipas-info/{{teams2.team.id}}">{{teams2.team.name}}</a></td>
                             <td>{{teams2.points}}</td>
                             <td>{{teams2.playedGames}}</td>
                             <td>{{teams2.won}}</td>

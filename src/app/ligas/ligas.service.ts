@@ -44,4 +44,5 @@ settings ={
    return this.http.get(this.settings.url + liga + "/standings" , {headers: headers});
   }
 
+
 }
