@@ -29,7 +29,7 @@
           
           <div class="col-md-3">
               <h2>Club Info:</h2>
-              <div style="overflow-y:scroll; height:550px"> 
+              <div style="overflow-y:scroll; height:450px"> 
                 <table class="table table-hover" > 
               <thead style="background-color: "> 
                 
@@ -87,7 +87,7 @@
 
               <h2>Squad:</h2>
 
-              <div class="tableFixHead" style="overflow-y:scroll; height:550px"> 
+              <div class="tableFixHead" style="overflow-y:scroll; height:450px"> 
                   <table id="myTable" class="table table-hover sorttable">
                   <thead >
                     <tr>
@@ -96,15 +96,17 @@
                       <th>Name</th>
                       <th>Nacionality</th>
                       <th>Role</th>
+                      <th>Date of Birth</th>
                     </tr>
                     </thead>
                     <tbody *ngFor ="let plantel of info.squad">
                       <tr>
                           <td>{{plantel.shirtNumber}}</td>
                           <td>{{plantel.position}}</td>
-                          <td>{{plantel.name}}</td>
+                          <td><a routerLink="/players/{{plantel.id}}">{{plantel.name}}</a></td>
                           <td>{{plantel.nationality}}</td>
                           <td>{{plantel.role}}</td>
+                          <td>{{plantel.dateOfBirth | date }}</td>
                       </tr> 
                       </tbody>
                     </table>
@@ -116,7 +118,7 @@
 
           <div class="col-md-3">
               <h2>Competitions:</h2>
-              <div class="tableFixHead" style="overflow-y:scroll; height:550px"> 
+              <div class="tableFixHead" style="overflow-y:scroll; height:450px"> 
                   <table id="myTable" class="table table-hover sorttable">
                   <thead  style="background-color: rgb(0, 0, 0);">
                     <tr>

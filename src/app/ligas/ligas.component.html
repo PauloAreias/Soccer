@@ -43,7 +43,7 @@
                     {{standings.competition.area.name}}
                   </div>
 
-                <h2>Standings {{standings.season.startDate}} / {{standings.season.endDate}} : </h2>
+                <h2>Standings {{standings.season.startDate | date:'yyyy'}} - {{standings.season.endDate | date:'yyyy'}} : </h2>
                 <div class="tableFixHead" style="overflow-y: scroll; height:400px;"  >
                   <div *ngFor="let teams of standings.standings">
                     <!-- <div *ngIf="liga==='CL'">
@@ -82,7 +82,7 @@
                           </thead>
                           <tbody *ngFor="let teams2 of teams.table">
                             <td>{{teams2.position}}</td>
-                            <td ><a><img [src]="teams2.team.crestUrl" width="100%" style="margin-right: 2%"></a></td>
+                            <td ><a routerLink="/equipas-info/{{teams2.team.id}}"><img [src]="teams2.team.crestUrl" width="100%" style="margin-right: 2%"></a></td>
                             <td><a routerLink="/equipas-info/{{teams2.team.id}}">{{teams2.team.name}}</a></td>
                             <td>{{teams2.points}}</td>
                             <td>{{teams2.playedGames}}</td>
@@ -102,14 +102,14 @@
             </div>
        
         <div class="col-md-6" >
-          <h2 >Season {{ligas.seasons[1].startDate}} / {{ligas.seasons[1].endDate}}  Winner:</h2>
-            <div class="alert alert-success" role="alert">
+         
               <div class= "text-center">
-                  <p><img [src]="ligas.seasons[1].winner.crestUrl" height="558px" width="400px"></p>
-                  <p ><a href="#">{{ligas.seasons[1].winner.name}}</a></p>
+                  <h2 >Season {{ligas.seasons[1].startDate | date:'yyyy'}} - {{ligas.seasons[1].endDate | date:'yyyy'}}  Winner:</h2>   
+                  <p><a routerLink="/equipas-info/{{ligas.seasons[1].winner.id}}"><img [src]="ligas.seasons[1].winner.crestUrl" height="558px" width="400px"></a></p>
+                  <p ><a routerLink="/equipas-info/{{ligas.seasons[1].winner.id}}">{{ligas.seasons[1].winner.name}}</a></p>
               </div>
                 
-            </div>
+            
           </div>
         </div>
     </div>

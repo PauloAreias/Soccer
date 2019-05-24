@@ -1,0 +1,37 @@
+<header></header>
+
+<body>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="text-center">
+          <h2>{{player.firstName}}</h2>
+          <img src="https://www.mikocoffee.com/private-label-and-export/wp-content/uploads/sites/84/2015/01/person-miko.png" width="20%">
+      </div>
+        <br>
+        <br>
+        <br>
+        
+      <div class="row" style="margin-left: 10%">
+      <div class="col-md-4">
+          <td>Name:</td><th>{{player.name}}</th>
+          <br>
+          <td>Age:</td><th>{{getSubString(player.dateOfBirth | date:'yyyy')}}</th>
+      </div>
+      <div class="col-md-4">
+          <td>Country Of Birth:</td><th>{{player.countryOfBirth}}</th>
+          <br>
+          <td>Nationality:</td><th>{{player.nationality}}</th>
+      </div>
+      <div class="col-md-4">
+          <td>Position:</td><th>{{player.position}}</th>
+          <br>
+          <td>Shirt Number:</td><th>{{player.shirtNumber}}</th>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+</body>

@@ -31,21 +31,41 @@
 
           <h2>Matches:</h2>
           <!-- <sectiom class="alert alert-danger" role="alert" *ngFor= "let team of ligas" [class.featured]="team.featured" > -->
-            
-                <div class="alert alert-dark" role="alert">
 
-                    <div class="col-md-6"> 
-                        {{matches.matches[0].utcDate}} :
-                        <p>{{matches.matches[0].homeTeam.name}} VS {{matches.matches[0].awayTeam.name}}</p>
-                      </div>
-                    <div class="col-md-6"></div>
+            
+
+                    <div class="tableFixHead" style="overflow-y:scroll; height:700px"> 
+                        <table id="myTable" class="table table-hover" >
+                        <thead>
+                          <tr>
+                            <th >Date</th>
+                            <th >Home Team</th>
+                            <th>Score</th>
+                            <th >Away Team</th>
+                            <th >STATUS</th>
+                            <!-- <th onclick="sortTable(2)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Competições</th>
+                            <th onclick="sortTable(3)"><img src="https://image.flaticon.com/icons/png/512/36/36861.png" width="15">Pais</th> -->
+                          </tr>
+                          </thead>
+                          <tbody *ngFor="let jogos of matches.matches">
+                            <td ><a >{{jogos.utcDate | date}}</a></td>
+                            <td><a routerLink="/equipas-info/{{jogos.homeTeam.id}}">{{jogos.homeTeam.name}}</a></td>
+                            <td>{{jogos.score.fullTime.homeTeam}} - {{jogos.score.fullTime.awayTeam}}</td>
+                            <td><a routerLink="/equipas-info/{{jogos.awayTeam.id}}"> {{jogos.awayTeam.name}}</a> </td>
+                            <td>{{jogos.status}}</td>
+
+                          </tbody>
+                          </table>
+                          </div>
                  
                   
-                </div>
+               
                
           <!-- </sectiom> -->
         </div>
         <div class="col-md-6">
+
+            <h2>Teams:</h2>
 
             <div class="tableFixHead" style="overflow-y:scroll; height:700px"> 
                 <table id="myTable" class="table table-hover">
@@ -58,7 +78,7 @@
                   </tr>
                   </thead>
                   <tbody *ngFor="let teams of equipas.teams">
-                    <td ><a><img [src]="teams.crestUrl" width="15%" style="margin-right: 2%"></a></td>
+                    <td ><a routerLink="/equipas-info/{{teams.id}}"><img [src]="teams.crestUrl" width="15%" style="margin-right: 2%"></a></td>
                     <td><a routerLink="/equipas-info/{{teams.id}}">{{teams.name}}</a></td>
                   </tbody>
                   </table>

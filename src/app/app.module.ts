@@ -13,13 +13,15 @@ import { EquipasService } from "./equipas/equipas.service";
 import { MatTableModule, MatSortModule} from '@angular/material';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { EquipasInfoComponent } from './equipas-info/equipas-info.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LigasComponent,
     EquipasComponent,
-    EquipasInfoComponent
+    EquipasInfoComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
